@@ -115,5 +115,5 @@ async function replaceSymbols(string) {
     content = await placeImports(content);
     content = await stripStyles(content);
     content = await replaceSymbols(content);
-    console.log(content);
+    console.log(content); 
 })(); 
