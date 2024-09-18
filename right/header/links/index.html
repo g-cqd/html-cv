@@ -1,0 +1,76 @@
+<section class="links">
+    <ul class="grid">
+        
+        <li><a symbol="@link;" href="https://gcqd.fr" target="_blank">gcqd.fr</a></li>
+        <li><a symbol="@link;" href="https://aemi.studio" target="_blank">Aemi Studio</a></li>
+        <li><a class="github-icon" href="https://github.com/g-cqd" target="_blank">
+            @g-cqd
+        </a></li>
+    </div>
+</section>
+
+
+<style>
+    .links {
+        width: 100%;
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--grid-spacing);
+            
+            li > a {
+                display: block;
+                font-weight: 600;
+                background-color: #00000010;
+                padding: calc(var(--spacing) / 2);
+                border-radius: var(--corner-radius);
+                position: relative;
+                max-width: 100%;
+                gap: 5mm;
+                
+                :is(h3,h4,.h3,.h4) {
+                    margin: 0;
+                }
+                
+                
+                &::before {
+                    margin-inline-end: 1ch;
+                }
+                
+                &:not([class*="icon"])::before {
+                    content: attr(symbol);
+                }
+                
+                &.github-icon::before {
+                    display: inline-block;
+                    content: "";
+                    width: 1.2em;
+                }
+
+                &.github-icon::after {
+                    --icon-size: 1.2em;
+                    position: absolute;
+                    display: block;
+                    content: "";
+                    background-image: url('/resources/images/github2.svg');
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    height: var(--icon-size);
+                    width: calc(var(--icon-size) * 16/15.604);
+                    top: 50%;
+                    left: calc(var(--spacing) / 2);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    
+</style>

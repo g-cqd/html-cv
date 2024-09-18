@@ -1,0 +1,49 @@
+<section class="projects">
+    <div class="grid">
+        {{/right/header/projects/cami}}
+        {{/right/header/projects/nad}}
+    </div>
+</section>
+
+
+<style>
+    .projects {
+        width: 100%;
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--grid-spacing);
+            
+            & > a {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                background-color: #00000010;
+                padding: calc(var(--spacing) / 2);
+                border-radius: var(--corner-radius);
+                position: relative;
+                max-width: 100%;
+                gap: calc(var(--spacing) / 2);
+                
+                :is(h3,h4,.h3,.h4) {
+                    margin: 0;
+                }
+                
+                img {
+                    display: block;
+                    aspect-ratio: 1/1;
+                    height: 10mm;
+                    width: 10mm;
+                    border-radius: 1mm;
+                }
+                
+                .details {
+                    flex: 1 1 auto;
+                    .subtitle {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+</style>

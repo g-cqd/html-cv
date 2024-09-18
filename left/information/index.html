@@ -1,0 +1,54 @@
+<div class="subpart" id="information">
+    <h2 class="h3">Informations</h2>
+    <ul>
+        <li symbol="@calendar;">
+            <en>25 y/o (1998)</en>
+            <fr>25 ans (1998)</fr>
+        </li>
+        <li symbol="@phone.fill;">
+            <all>
+                <a href="tel:+330761370107" target="_blank">
+                    +33 (0) 7 61 37 01 07
+                </a>
+            </all>
+        </li>
+        <li symbol="@envelope.fill;">
+            <all>
+                <a href="mailto:public@gcqd.fr" target="_blank">
+                    public@gcqd.fr
+                </a>
+            </all>
+        </li>
+    </ul>
+    <ul id="languages">
+        <li symbol="🇫🇷">
+            <en>French</en>
+            <fr>Français</fr>
+        </li>
+        <li symbol="🇬🇧">
+            <en>English &bull; C1 ~ C2</en>
+            <fr>Anglais &bull; C1 ~ C2</fr>
+        </li>
+        <li symbol="🇮🇹">
+            <en>Italian &bull; Basic</en>
+            <fr>Italien &bull; Notions</fr>
+        </li>
+    </ul>
+</div>
+
+<style>
+    @media print {
+        #information {
+            #languages li::before {
+                transform: translate(0.4em, 0.25em) scale(1.3);
+            }
+        }
+    }
+    @media not print {
+        #information {
+            #languages li::before {
+                transform: translate(0.45em, 0.1em) scale(1.3);
+            }
+        }
+    }
+</style>

@@ -1,0 +1,164 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+:root {
+    --header-font: -apple-system, "SF Pro Display";
+    --body-font: -apple-system, "SF Pro Text";
+    --spacing: 6mm;
+    --corner-radius: 2mm;
+
+    --base-font-size: 10pt;
+    --base-font-weight: 400;
+
+    font-feature-settings: "kern" 1,
+        "liga" 1,
+        "calt" 1,
+        "dlig" 1,
+        "ccmp" 1,
+        "wght" var(--base-font-weight);
+
+    text-rendering: optimizeLegibility;
+    font-optical-sizing: auto;
+    font-kerning: normal;
+
+    -webkit-font-size-adjust: 100%;
+    font-size-adjust: 100%;
+
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+
+    hyphens: auto;
+
+	vertical-align: baseline;
+	word-spacing: normal;
+
+    font-family: var(--body-font);   
+    font-size: var(--base-font-size);
+}
+
+style, head {
+    display: none;
+}
+
+a, a:link, a:visited, a:hover, a:focus {
+    color: currentColor;
+    font-style: normal;
+    text-decoration: none;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--body-font);
+    font-size: var(--base-font-size);
+    font-weight: var(--base-font-weight);
+}
+
+body {
+    max-width: 100vw;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+:is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+    font-family: var(--header-font);
+}
+
+:not(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+    font-family: var(--body-font);
+}
+
+h1,
+.h1 {
+    font-size: 2.5em;
+    letter-spacing: -0.027em;
+    line-height: 1.05;
+}
+
+h2,
+.h2 {
+    font-size: 2em;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+}
+
+h3,
+.h3 {
+    font-size: 1.5em;
+    letter-spacing: -0.019em;
+    line-height: 1.15;
+}
+
+h4,
+.h4 {
+    font-size: 1.17em;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+}
+
+h5,
+.h5 {
+    font-size: 1em;
+    letter-spacing: -0.011em;
+    line-height: 1.4;
+}
+
+h6,
+.h6 {
+    font-size: 0.83em;
+    letter-spacing: -0.004em;
+    line-height: 1.45;
+}
+
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+
+.main-body {
+    display: flex;
+    flex-flow: row nowrap;
+    min-width: 210.000mm;
+    width: 210.000mm;
+    max-width: 210.000mm;
+    min-height: 297.000mm;
+    height: 297.000mm;
+    max-height: 297.000mm;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    gap: var(--spacing);
+    
+    & > * {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: start;
+        align-items: start;
+        height: 100%;
+    }
+}
+
+@media not print {
+    .debug * {
+        position: relative;
+    }
+    .debug::before,
+    .debug ::before {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        border: 1px solid red;
+        background-color: rgba(255,0,0,0.1);
+        z-index: 2;
+    }
+}

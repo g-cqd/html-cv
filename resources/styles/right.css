@@ -1,0 +1,7 @@
+.right-column {
+    flex: 1 1 65%;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: var(--spacing) var(--spacing) var(--spacing) 0;
+    gap: var(--spacing);
+}

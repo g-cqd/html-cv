@@ -1,0 +1,55 @@
+<div class="identity">
+    <div class="identity-portrait-wrapper">
+        <img
+        alt="identity Portrait"
+        class="identity-portrait"
+        src="/resources/images/people/people-gco.jpg"
+        >
+    </div>
+    <h1 id="fullname">
+        <a href="https://www.linkedin.com/in/gcqd" target="_blank">
+            Guillaume<br>Coquard
+        </a>
+    </h1>
+</div>
+
+
+<style>
+    .identity {
+        
+        display: flex;
+        flex-flow: column nowrap;
+        gap: var(--spacing);
+        
+        .identity-portrait-wrapper {
+            position: relative;
+            
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                content: "";
+                display: block;
+                border-radius: var(--corner-radius);
+                border: 0.1mm #00000010 solid;
+                z-index: 10;
+            }
+            
+            .identity-portrait {
+                aspect-ratio: 1;
+                display: block;
+                max-width: 100%;
+                border-radius: var(--corner-radius);
+                position: relative;
+            }
+        }
+        
+        #fullname {
+            font-size: 24pt;
+            line-height: 1;
+            margin: 3mm 0 0;
+        }
+    }
+</style>
