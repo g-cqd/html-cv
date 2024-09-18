@@ -4,8 +4,8 @@
 }
 
 :root {
-    --header-font: SFPro, -apple-system, "SF Pro Display";
-    --body-font: SFPro, -apple-system, "SF Pro Text";
+    --header-font: "Cupertino Pro", -apple-system, "SF Pro Display";
+    --body-font: "Cupertino Pro", -apple-system, "SF Pro Text";
     --spacing: 6mm;
     --corner-radius: 2mm;
     

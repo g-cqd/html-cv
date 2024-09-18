@@ -1,3 +1,0 @@
-body [lang]:not([lang="fr"]), body en {
-    display: none !important;
-}

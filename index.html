@@ -8,13 +8,49 @@
     <link rel="stylesheet" href="./resources/styles/left.css">
     <link rel="stylesheet" href="./resources/styles/right.css">
     <link rel="stylesheet" href="./resources/styles/fonts.css">
-    <script src="./script.js"></script>
-</head>
-<body>
-    <div class="main-body">
-        {{./left/index.html}}
-        {{./right/index.html}}
-    </div>
-</body>
-</html>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
 
+            const userLang = navigator.language || navigator.userLanguage;
+            let lang = userLang.startsWith('fr') ? "fr" : "en";
+            const html = document.getElementsByTagName("html")[0];
+            html.setAttribute("lang", lang);
+            if (!("queryLocalFonts" in window) && ("webkitSpeechRecognition" in window)) {
+                html.classList.add("safari");
+            }
+            function opposite(str) {
+                switch (str) {
+                    case "en": { return "fr" }
+                    case "fr": { return "en" }
+                    default: { return "fr" }
+                }
+            }
+            document.head.innerHTML += `<style>
+    body [lang]:not([lang="\{opposite(lang)}"]), body \{lang} {display:none!important;}
+    </style>`;
+                
+                const langs = ["en","fr"]
+                
+                document.body.querySelectorAll(`[lang]:not([lang="${lang}"])`).forEach((node) => {
+                    node.remove();
+                });
+                
+                for (const language of langs) {
+                    if (language != lang) {
+                        [...document.body.getElementsByTagName(language)].forEach((node) => {
+                            node.remove();
+                        })
+                    }
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <div class="main-body">
+            {{./left/index.html}}
+            {{./right/index.html}}
+        </div>
+    </body>
+    </html>
+    
+    

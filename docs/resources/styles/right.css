@@ -1,0 +1,9 @@
+.right-column {
+    float: right;
+    width: calc(65% - var(--spacing) / 2);
+    max-width: calc(65% - var(--spacing) / 2);
+    display: flex;
+    flex-flow: column nowrap;
+    padding: var(--spacing) var(--spacing) var(--spacing) 0;
+    gap: var(--spacing);
+}
