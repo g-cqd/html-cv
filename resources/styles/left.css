@@ -1,9 +1,11 @@
 
 .left-column {
-    flex: 1 1 35%;
+    float: left;
+    width: calc(35% - var(--spacing) / 2);
+    max-width: calc(35% - var(--spacing) / 2);
+    margin-inline-end: var(--spacing);
     background-color: #00000010;
     padding: var(--spacing);
-    max-width: 35%;
     gap: calc(var(--spacing) * 1.5);
     
     :is(h2, .h2, h3, .h3) {
