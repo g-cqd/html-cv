@@ -1,5 +1,5 @@
 async function traverseAndReplace(element) {
-    // Check each child node for text content that contains {{ ... }}
+    // Check each child node for text content that contains {{ ... .html}}
     element.childNodes.forEach(async (node) => {
 
         globalThis.traveralState = globalThis.traveralState != undefined ? globalThis.traveralState + 1 : 0;
@@ -7,7 +7,7 @@ async function traverseAndReplace(element) {
         if (node.nodeType === Node.TEXT_NODE) {
             let textContent = node.textContent;
             
-            // Regular expression to match multiple {{ file_path }} placeholders
+            // Regular expression to match multiple {{ file_path .html}} placeholders
             const regex = /\{\{(.*?)\}\}/g;  // 'g' flag for global matching of multiple instances
             let match;
             
@@ -136,13 +136,21 @@ async function cleanLanguages(lang) {
 // Call the function when the DOM content is fully loaded
 document.addEventListener("DOMContentLoaded", async () => {
 
-    const lang = document.getElementsByTagName("html")[0].getAttribute("lang");
-    document.head.innerHTML += `<link rel="stylesheet" href="./${lang}.css">`
+    const html = document.getElementsByTagName("html")[0];
+
+    if (!("queryLocalFonts" in window) && ("webkitSpeechRecognition" in window)) {
+        html.classList.add("safari");
+    }
+
+    const lang = html.getAttribute("lang");
+    document.head.innerHTML += `<link rel="stylesheet" href="./${lang}.css">`;
 
     globalThis.traveralState = 0;
     await traverseAndReplace(document.body);
 
-    const SFSymbolsJSON = await fetch("./resources/fonts/sfsymbols.json");
+    const SFSymbolsJSON = await fetch(
+        `${window.location.href.replace(/\/$/gu, "")}/resources/fonts/sfsymbols.json`
+    );
     
     if (SFSymbolsJSON.ok) {
         const parsedJSON = await SFSymbolsJSON.json();

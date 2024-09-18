@@ -4,8 +4,8 @@
 }
 
 :root {
-    --header-font: -apple-system, "SF Pro Display";
-    --body-font: -apple-system, "SF Pro Text";
+    --header-font: SFPro, -apple-system, "SF Pro Display";
+    --body-font: SFPro, -apple-system, "SF Pro Text";
     --spacing: 6mm;
     --corner-radius: 2mm;
 
@@ -74,42 +74,42 @@ body {
 h1,
 .h1 {
     font-size: 2.5em;
-    letter-spacing: -0.027em;
+    /* letter-spacing: -0.027em; */
     line-height: 1.05;
 }
 
 h2,
 .h2 {
     font-size: 2em;
-    letter-spacing: -0.022em;
+    /* letter-spacing: -0.022em; */
     line-height: 1.1;
 }
 
 h3,
 .h3 {
     font-size: 1.5em;
-    letter-spacing: -0.019em;
+    /* letter-spacing: -0.019em; */
     line-height: 1.15;
 }
 
 h4,
 .h4 {
     font-size: 1.17em;
-    letter-spacing: -0.015em;
+    /* letter-spacing: -0.015em; */
     line-height: 1.2;
 }
 
 h5,
 .h5 {
     font-size: 1em;
-    letter-spacing: -0.011em;
+    /* letter-spacing: -0.011em; */
     line-height: 1.4;
 }
 
 h6,
 .h6 {
     font-size: 0.83em;
-    letter-spacing: -0.004em;
+    /* letter-spacing: -0.004em; */
     line-height: 1.45;
 }
 

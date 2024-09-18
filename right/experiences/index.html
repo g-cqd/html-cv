@@ -1,6 +1,6 @@
 <div id="experiences">
-    {{./right/experiences/professional}}
-    {{./right/experiences/academic}}
+    {{./right/experiences/professional/index.html}}
+    {{./right/experiences/academic/index.html}}
 </div>
 
 <style>
@@ -37,7 +37,7 @@
                 border-radius: calc(var(--corner-radius) / 16);
                 margin: 0 0 2mm;
             }
-
+            
             :not(.subpart-title) + &::before {
                 margin-block-start: calc(var(--spacing) / 2);
             }
@@ -51,7 +51,7 @@
                 text-transform: uppercase;
                 color: #00000070;
                 font-size: 9pt;
-
+                
                 status {
                     &::before {
                         display: inline-block;
@@ -65,6 +65,10 @@
                 font-weight: bold;
                 line-height: 1.75;
                 font-size: 11pt;
+
+                .safari & {
+                    line-height: 1.7;
+                }
             }
             
             qualification {
@@ -86,13 +90,20 @@
             
             
             description {
-                font-size: 8pt;
+                font-size: 8.125pt;
+
+                .safari & {
+                    font-size: 7pt;
+                    letter-spacing: -0.065em;
+                }
                 ul li {
                     line-height: 1.5;
                     &::before {
                         content: "\2022";
                         padding-inline-end: 1mm;
                     }
+                    
+                    
                 }
             }
         }
