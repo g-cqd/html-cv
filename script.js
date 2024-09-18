@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     globalThis.traveralState = 0;
     await traverseAndReplace(document.body);
 
-    const SFSymbolsJSON = await fetch("/resources/fonts/sfsymbols.json");
+    const SFSymbolsJSON = await fetch("./resources/fonts/sfsymbols.json");
     
     if (SFSymbolsJSON.ok) {
         const parsedJSON = await SFSymbolsJSON.json();
