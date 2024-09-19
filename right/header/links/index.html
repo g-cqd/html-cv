@@ -3,7 +3,8 @@
         
         <li><a symbol="@link;" href="https://gcqd.fr" target="_blank">gcqd.fr</a></li>
         <li><a symbol="@link;" href="https://aemi.studio" target="_blank">Aemi Studio</a></li>
-        <li><a class="github-icon" href="https://github.com/g-cqd" target="_blank">
+        <li><a href="https://github.com/g-cqd" target="_blank">
+            <i class="github-icon"></i>
             @g-cqd
         </a></li>
     </ul>
@@ -48,13 +49,13 @@
                     content: attr(symbol);
                 }
                 
-                &.github-icon::before {
+                .github-icon::before {
                     display: inline-block;
                     content: "";
                     width: 1.2em;
                 }
 
-                &.github-icon::after {
+                .github-icon::after {
                     --icon-size: 1.2em;
                     position: absolute;
                     display: block;

@@ -1,5 +1,8 @@
 *, ::before, ::after {
     box-sizing: border-box;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
     user-select: none;
 }
 
@@ -36,6 +39,8 @@
     
     font-family: var(--body-font);   
     font-size: var(--base-font-size);
+
+    word-break: keep-all;
 }
 
 style, head {
@@ -160,4 +165,42 @@ ul {
         background-color: rgba(255,0,0,0.1);
         z-index: 2;
     }
+
+    a {
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            top: 50%;
+            left: 50%;
+            width: calc(100% + 5pt);
+            height: calc(100% + 5pt);
+            background-color: #00000020;
+            border-radius: 0.25em;
+            transform: scale(0.9) translate(-50%,-50%);
+            opacity: 0;
+            position: absolute;
+        }
+
+        &::after,
+        &:hover::after {
+            transition: transform 150ms ease-in-out,
+            opacity 150ms ease-in-out;
+        }
+
+        &:hover::after {
+            transition: transform 150ms ease-in-out,
+            opacity 150ms ease-in-out;
+            transform: scale(1) translate(-50%,-50%);
+            opacity: 1;
+        }
+
+        :is(.links, .projects) .grid &::after {
+            width: calc(100% + 8pt);
+            height: calc(100% + 8pt);
+            border-radius: calc(var(--corner-radius) + 2.5pt);
+        }
+    }
+
 }

@@ -34,6 +34,7 @@ set -xl current_dir (pwd);
 /bin/rm -rf "$current_dir/docs";
 mkdir docs
 cp -r resources ./docs
+cp favicon.* ./docs
 bun ./parse.js > ./docs/index.html
 
 for htmlFile in (find ./docs -name "**.html")
