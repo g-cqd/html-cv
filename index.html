@@ -31,15 +31,26 @@
         {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Guillaume Coquard"},"dateModified":"2024-09-19T00:00:00+00:00","datePublished":"2024-09-19T00:00:00+00:00","description":"Guillaume Coquard is a Software Engineer with experience in Swift & Apple OS platforms, along with a solid background in Web development and UI/UX design.","headline":"Guillaume Coquard • iOS Developer","image":{"width":1440,"height":754,"alt":"Guillaume Coquard • iOS Developer","url":"https://cv.gcqd.fr/resources/images/thumbnail.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://cv.gcqd.fr/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://cv.gcqd.fr/favicon.png"},"name":"Guillaume Coquard"},"url":"https://cv.gcqd.fr/"}</script>
         
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
+            function getBrowserLanguage() {
                 const userLang = navigator.language || navigator.userLanguage;
-                let lang = userLang.startsWith('fr') ? "fr" : "en";
-                const html = document.getElementsByTagName("html")[0];
-                html.setAttribute("lang", lang);
-                if (!("queryLocalFonts" in window) && ("webkitSpeechRecognition" in window)) {
-                    html.classList.add("safari");
-                }
+                return userLang.startsWith('fr') ? "fr" : "en";
+            }
+            function getQueryLang(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+            function setLanguage() {
                 const langs = ["en","fr"]
+                const lang = getQueryLang('lang') ?? getBrowserLanguage();
+                if (langs.includes(lang)){
+                    document.documentElement.lang = lang;
+                } else {
+                    document.documentElement.lang = 'en';
+                }
+                if (!("queryLocalFonts" in window) && ("webkitSpeechRecognition" in window)) {
+                    document.documentElement.classList.add("safari");
+                }
+                document.head.innerHTML += `<style>body [lang]:not([lang="${lang}"]){display:none!important;}</style>`
                 document.body.querySelectorAll(`[lang]:not([lang="${lang}"])`).forEach((node) => {
                     node.remove();
                 });
@@ -50,7 +61,8 @@
                         })
                     }
                 }
-            })
+            }
+            document.addEventListener("DOMContentLoaded", setLanguage)
         </script>
     </head>
     <body>
