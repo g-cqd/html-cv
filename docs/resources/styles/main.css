@@ -143,23 +143,6 @@ ul {
         justify-content: start;
         align-items: start;
         height: 100%;
-        overflow-x: visible;
-        overflow-y: hidden;
-    }
-
-    .\[\] {
-        display:block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 1ch;
-        height: 1.5ex;
-        font-size: 14pt;
-        overflow: hidden;
-        color: transparent;
-        word-break: break-all;
-        margin: 0;
-        padding: 0;
     }
 }
 
