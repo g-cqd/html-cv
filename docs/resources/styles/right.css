@@ -6,4 +6,6 @@
     flex-flow: column nowrap;
     padding: var(--spacing) var(--spacing) var(--spacing) 0;
     gap: var(--spacing);
+    font-size: 1em;
+    overflow-y: hidden;
 }
