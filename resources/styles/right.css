@@ -1,10 +1,10 @@
 .right-column {
     float: right;
-    width: calc(65% - var(--spacing) / 2);
-    max-width: calc(65% - var(--spacing) / 2);
+    width: 68.5%;
+    max-width: 68.5%;
     display: flex;
     flex-flow: column nowrap;
-    padding: var(--spacing) var(--spacing) var(--spacing) 0;
+    padding: var(--spacing) var(--spacing) var(--spacing) var(--spacing);
     gap: var(--spacing);
     font-size: 1em;
     overflow-y: hidden;
