@@ -4,6 +4,7 @@ import { $ } from "bun";
 import { stripStyles } from "./css.js";
 import { ensureDirectory, fileExists, resolveFromRoot, templateImport, replaceSymbols, executeScript } from "./utils.js";
 import { mangleClassNamesAdvanced } from "./css-mangler.js";
+import { subsetFonts } from "./subset-fonts.js";
 
 const SCRIPT_DIR = import.meta.dir;
 const DOCS_DIR = resolveFromRoot("docs");
@@ -53,6 +54,9 @@ async function minifyAllAssets() {
 
 async function build() {
     console.log("🏗️  Starting build...");
+
+    // Subset fonts first
+    await subsetFonts();
 
     // Copy all assets first
     await copyAssets();

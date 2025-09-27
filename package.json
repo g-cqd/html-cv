@@ -5,7 +5,8 @@
   "scripts": {
     "build": "bun run scripts/build.js",
     "dev": "bun run scripts/build.js && bun run scripts/watch.js",
-    "clean": "rm -rf docs"
+    "clean": "rm -rf docs",
+    "subset-fonts": "bun run scripts/subset-fonts.js"
   },
   "devDependencies": {
     "live-server": "^1.2.2",
