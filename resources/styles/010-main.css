@@ -9,8 +9,8 @@
 }
 
 :root {
-    --header-font: -apple-system, BlinkMacSystemFont, "Cupertino Pro", "SF Pro Display";
-    --body-font: -apple-system, BlinkMacSystemFont, "Cupertino Pro", "SF Pro Text";
+    --header-font: -apple-system, BlinkMacSystemFont, "Cupertino Pro", "SF Pro Display", Helvetica, system-ui, Arial, sans-serif;
+    --body-font: -apple-system, BlinkMacSystemFont, "Cupertino Pro", "SF Pro Text", Helvetica, system-ui, Arial, sans-serif;
     --spacing: 6mm;
     --corner-radius: 2mm;
 
