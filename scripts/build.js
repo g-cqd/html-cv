@@ -20,8 +20,8 @@ async function copyAssets() {
         await $`cp -R ${RESOURCES_DIR} ${DOCS_DIR}/`.quiet();
     }
 
-    // Copy favicon and apple touch icons
-    const assetGlobs = ["favicon.*", "apple-*.png"];
+    // Copy favicon, apple touch icons, and robots.txt
+    const assetGlobs = ["favicon.*", "apple-*.png", "robots.txt"];
     for (const glob of assetGlobs) {
         try {
             await $`cp ${resolveFromRoot(glob)} ${DOCS_DIR}/`.quiet();
