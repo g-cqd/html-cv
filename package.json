@@ -1,0 +1,14 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "bun run scripts/build.js",
+    "dev": "bun run scripts/build.js && bun run scripts/watch.js",
+    "clean": "rm -rf docs"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "minify": "^11.4.1"
+  }
+}
