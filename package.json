@@ -9,6 +9,8 @@
   },
   "devDependencies": {
     "live-server": "^1.2.2",
-    "minify": "^11.4.1"
+    "minify": "^11.4.1",
+    "posthtml": "^0.16.6",
+    "posthtml-minify-classnames": "^1.0.0-alpha.0"
   }
 }

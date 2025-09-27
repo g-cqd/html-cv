@@ -3,6 +3,7 @@ import { minify } from "minify";
 import { $ } from "bun";
 import { stripStyles } from "./css.js";
 import { ensureDirectory, fileExists, resolveFromRoot, templateImport, replaceSymbols, executeScript } from "./utils.js";
+import { mangleClassNamesAdvanced } from "./css-mangler.js";
 
 const SCRIPT_DIR = import.meta.dir;
 const DOCS_DIR = resolveFromRoot("docs");
@@ -69,6 +70,7 @@ async function build() {
     content = await stripStyles(content);
     content = await executeScript(content);
     content = await replaceSymbols(content);
+    content = await mangleClassNamesAdvanced(content, { verbose: true });
 
     await ensureDirectory(dirname(outputFile));
     await Bun.write(outputFile, content);
