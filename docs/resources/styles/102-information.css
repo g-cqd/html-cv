@@ -1,0 +1,1 @@
+@media print{#information #languages li::before{transform:translate(.4em,.25em) scale(1.3)}}@media not print{#information #languages li::before{transform:translate(.45em,.1em) scale(1.3)}}
