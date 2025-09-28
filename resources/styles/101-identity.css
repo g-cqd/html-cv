@@ -2,9 +2,15 @@
     display: flex;
     flex-flow: column nowrap;
     gap: var(--spacing);
+    width: 100%;
 }
 
-.identity .identity-portrait-wrapper {
+.identity .identity-portrait-wrapper,
+.identity .identity-portrait-wrapper .identity-portrait{
+    aspect-ratio: 1;
+    display: block;
+    width: 100%;
+    max-width: 100%;
     position: relative;
 }
 
@@ -22,11 +28,7 @@
 }
 
 .identity .identity-portrait-wrapper .identity-portrait {
-    aspect-ratio: 1;
-    display: block;
-    max-width: 100%;
     border-radius: var(--corner-radius);
-    position: relative;
 }
 
 .identity #fullname {
