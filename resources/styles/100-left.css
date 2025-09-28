@@ -63,6 +63,11 @@
     color: var(--color-80);
 }
 
+html[lang="ja"] .left-column .list .subpart li *,
+html[lang="ja"] .left-column .subpart li * {
+    font-size: 9pt;
+}
+
 .left-column .list .subpart li *::first-line,
 .left-column .subpart li *::first-line {
     color: var(--currentColor);

@@ -2,6 +2,7 @@ function getBrowserLanguage() {
   const userLang = navigator.language || navigator.userLanguage;
   if (userLang.startsWith("fr")) return "fr";
   if (userLang.startsWith("de")) return "de";
+  if (userLang.startsWith("ja")) return "ja";
   return "en";
 }
 function getQueryLang(param) {
@@ -9,7 +10,7 @@ function getQueryLang(param) {
   return urlParams.get(param);
 }
 function setLanguage() {
-  const langs = ["en", "fr", "de"];
+  const langs = ["en", "fr", "de", "ja"];
   const lang = getQueryLang("lang") ?? getBrowserLanguage();
   if (langs.includes(lang)) {
     document.documentElement.lang = lang;

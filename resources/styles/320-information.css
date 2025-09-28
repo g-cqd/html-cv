@@ -25,3 +25,10 @@
     line-height: 1.5;
     margin-block-end: 1em;
 }
+
+html[lang="ja"] .information .details {
+    margin-block-start: 0.7578947368em;
+    font-size: 0.95em;
+    line-height: 1.6578947368;
+    margin-block-end: 1.01052631579em;
+}
