@@ -1,1 +1,1 @@
-.header{--grid-spacing:calc(var(--spacing) * 0.75);display:flex;flex-flow:column nowrap;gap:var(--grid-spacing);width:100%}
+.header{--grid-spacing:calc(var(--spacing)*.75);gap:var(--grid-spacing);flex-flow:column;width:100%;display:flex}
