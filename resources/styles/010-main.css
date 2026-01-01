@@ -220,3 +220,15 @@ ul {
         border-radius: calc(var(--corner-radius) + 4pt);
     }
 }
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    html, body, .main-body {
+        margin: 0;
+        padding: 0;
+    }
+}
